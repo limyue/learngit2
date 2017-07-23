@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const</title>
+</head>
+<style>
+	html{
+		background-color: #000;
+		color:#fff;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	#red{
+		color: red;
+		padding:8px;
+	}
+	#yellow{
+		color: yellow;
+		padding:8px;
+	}
+
+</style>
+<body>
+	<pre>
+	<span id="yellow">es6</span>普通函数：
+		function show(a, b=100){  //默认b=100
+			return a + b;
+		}
+		alert(show(1,2));  //3		
+		alert(show(1));	   //101
+	</pre>
+	<hr>
+	<pre>
+	<span id="yellow">es6</span>箭头函数：
+		<span id="red">let show = (a,b=100) => a+b;</span>//一个返回值时
+		alert(show(1,2));  //3		
+		alert(show(1));	   //101
+		***************************************************
+		<span id="red">let show = (a,b=100) => {</span>//多个返回值时
+			alert(`其他返回值`);
+			return a+b;
+		<span>};</span>
+		alert(show(1,2));  //3		
+	</pre>
+
+
+
+	
+</body>
+<script>
+		// let show = (a,b=100) => {//多个返回值时
+		// 	alert(`其他信息`);
+		// 	return a+b;
+		// };
+		// alert(show(1,2));  //3		
+</script>
+</html>

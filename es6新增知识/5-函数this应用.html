@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const</title>
+</head>
+<style>
+	html{
+		background-color: #000;
+		color:#fff;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	#red{
+		color: red;
+		padding:8px;
+	}
+	#yellow{
+		color: yellow;
+		padding:8px;
+	}
+	#pink{
+		color: pink;
+	}
+</style>
+<body>
+	<pre>
+	<span id="yellow">es5</span>普通函数：
+		var obj = {//定义一个对象
+			a:5,
+			func:function(){
+				console.log(this.a);
+			},
+			test:function(){
+				<span id="pink">var that = this;</span>//--->解决办法
+				<span id="red">setTimeout(function(){
+					that.func();//这个this-->window
+				},1);</span>
+			}
+		}
+		obj.test();
+	</pre>
+	<hr>
+	<pre>
+	<span id="yellow">es6</span>箭头函数：
+	let obj = {//定义一个对象
+		a:5,
+		func:function(){
+			console.log(this.a);
+		},
+		test:function(){
+			<span id="red">setTimeout(() => {
+				this.func();  //this指向函数定义时的this
+			},1);</span>
+		}
+	}
+	obj.test();
+	</pre>
+</body>
+<script>
+	// let obj = {//定义一个对象
+	// 	a:5,
+	// 	func:function(){
+	// 		console.log(this.a);
+	// 	},
+	// 	test:function(){
+	// 		setTimeout(() => {
+	// 			this.func();
+	// 		},1);
+	// 	}
+	// }
+	// obj.test();
+</script>
+</html>

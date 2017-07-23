@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const</title>
+</head>
+<style>
+	html{
+		background-color: #000;
+		color:#fff;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	#red{
+		color: red;
+		padding:8px;
+	}
+	#yellow{
+		color: yellow;
+		padding:8px;
+	}
+	#pink{
+		color: pink;
+	}
+</style>
+<body>
+	<pre>
+	<span id="yellow">es5</span>对象：
+		var a = 10;//定义一个变量
+		var obj = {//定义一个对象
+			a:a，   //将变量a复制给对象a
+			b:function(){
+				console.log(this.a)
+			}
+
+		}
+	console.log(obj);
+	obj.b();
+	</pre>
+	<hr>
+	<pre>
+	<span id="yellow">es6</span>对象：
+	var a = 10;
+	var obj = {
+		a      //es6中不用再赋值给键，直接引用即可
+	}
+	console.log(obj);
+
+	**********************************************
+	var a = 10;
+	var obj = {//定义一个对象
+		a,
+		b(){   //es6中函数写法
+			console.log(this.a)
+		}
+	}
+	obj.b();//输出10
+
+	**********************************************
+	<span id="red">es6获得键名--Object.keys()</span>
+	console.log(Object.keys(obj));
+
+	**********************************************
+	<span id="red">es6将某一对象属性加到另外一个对象上面--Object.assign()</span>
+	var a = 10;
+	var obj = {//定义一个对象
+		a,
+		b(){
+			console.log(this.a)
+		}
+	}
+	var obj2 = {
+		c:100
+	}
+	Object.assign(obj2,obj);
+	console.log(obj2)
+
+	</pre>
+</body>
+<script>
+	var a = 10;
+	var obj = {//定义一个对象
+		a,
+		b(){
+			console.log(this.a)
+		}
+	}
+	var obj2 = {
+		c:100
+	}
+	//obj.b()
+	console.log(Object.keys(obj));
+	Object.assign(obj2,obj);
+	console.log(obj2)
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const</title>
+</head>
+<style>
+	html{
+		background-color: #000;
+		color:#fff;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	#red{
+		color: red;
+		padding:8px;
+	}
+	#yellow{
+		color: yellow;
+		padding:8px;
+	}
+	#liuyanban{
+		width: 600px;
+		margin: 0 auto;
+		border:1px solid #ccc;
+	}
+</style>
+<body>
+	<pre>
+	<span id="yellow">es5</span>字符串输出：
+		let a = "Love";
+		console.log("I "+a+" You");  //I Love You
+	</pre>
+	<pre>
+	<span id="yellow">es5</span>字符串输出：
+		let a = "Love";
+		console.log(`I ${a} You`);  //I Love You
+	</pre>
+	<pre>
+	(前后是Tab键上边的`，变量${}包起来,内容可换行)
+	</pre>
+	<hr>
+	<div id="liuyanban">
+	<h3 id="red">简易留言板</h3>
+	<input type="text" id="txt1" placeholder="姓名"><br/>
+	<!-- 留言者 -->
+	<input type="text" id="txt2" placeholder="内容"><br/>
+	<!-- 留言内容 -->
+	<input type="button" value="点击按钮留言" id="btn1">
+	<ul id="ul">
+		
+	</ul>
+	</div>
+	
+</body>
+<script>
+
+	let oTxt1 = document.querySelector("#txt1");
+	let oTxt2 = document.querySelector("#txt2");
+	let oBtn1 = document.querySelector("#btn1");
+	let oUl = document.querySelector("#ul");
+
+	oBtn1.onclick = function(){
+		var li = document.createElement("li");
+		li.innerHTML = `<p>${txt2.value}</p>
+			<a>${txt1.value}</a>`;
+		oUl.appendChild(li);
+	}
+	
+</script>
+</html>

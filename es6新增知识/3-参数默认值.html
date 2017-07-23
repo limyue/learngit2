@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const</title>
+</head>
+<style>
+	html{
+		background-color: #000;
+		color:#fff;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	#red{
+		color: red;
+		padding:8px;
+	}
+	#yellow{
+		color: yellow;
+		padding:8px;
+	}
+
+</style>
+<body>
+	<pre>
+	<span id="yellow">es5</span>：
+		function show(a,b){
+			<span id="red">a = a || 10</span>;   //默认b=10
+			return a + b;
+		}
+		alert(show(1,2));  //3		
+		alert(show(1));	   //11
+	</pre>
+	<hr>
+	<pre>
+	<span id="yellow">es6</span>：
+		function show(a, <span id="red">b=100</span>){  //默认b=100
+			return a + b;
+		}
+		alert(show(1,2));  //3		
+		alert(show(1));	   //101
+	</pre>
+
+
+	
+</body>
+<script>
+
+		// function show(a,b=100){  //默认b=100
+		// 	return a + b;
+		// }
+		// alert(show(1,2));  //3		
+		// alert(show(1));	   //101
+</script>
+</html>

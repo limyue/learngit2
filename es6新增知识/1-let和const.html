@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let和const</title>
+</head>
+<style>
+	html{
+		background-color: #000;
+		color:#fff;
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: bold;
+	}
+	#red{
+		color: red;
+		padding:8px;
+	}
+	#yellow{
+		color: yellow;
+		padding:8px;
+	}
+</style>
+<body>
+<h3 id="red">const定义常量</h3>
+	<pre>
+	<span id="yellow">es5</span>常量的定义：
+		var PI = 3.1415;  //定义常量PI
+		PI = 4;	          //给PI赋值（按理常量无法改变）
+		alert(PI);        //输出PI值为4（PI改变了）
+	<span id="yellow">es6</span>常量的定义：
+		const PI = 3.1415;//定义常量PI
+		PI = 4;           //给PI赋值
+		alert(PI);        //报错：常量无法改变
+		*********************************************************************
+		const obj = {     //定义一个对象
+			a:3,          
+			b:4
+		}
+		//obj={}         //不可以改变对象
+		obj.a = 6;       //可以改变对象里面键值对
+		console.log(obj);//输出a=6,b=4
+	</pre>
+	<hr>
+	<h3 id="red">let定义变量</h3>
+	<pre>
+	<span id="yellow">es5</span>变量的定义：
+		for(var i=0; i<10; i++){
+			console.log("for里面"+i); //输出for里面1-9
+		}
+		console.log("for外面"+i);  //输出for外面+10
+	<span id="yellow">es6</span>变量的定义：
+		for(let i=0; i<10; i++){
+			console.log("for里面"+i);//输出for里面1-9 
+		}
+		console.log("for外面"+i);  //报错--let块级作用域，以{}作为它作用范围
+		*********************************************************************
+		if(true){
+			let a = 4;
+			console.log(a);  //输出4
+		}
+		console.log(a);  //报错
+
+	</pre>
+
+	
+</body>
+<script>
+
+	
+</script>
+</html>
